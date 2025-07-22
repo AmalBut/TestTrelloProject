@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("loginToTrello", (email, password) => {
+    cy.visit("https://id.atlassian.com/login?application=trello");
+    cy.get("[name='username']").type("amalbutmah376@gmail.com");
+    cy.get("#login-submit").click();
+    cy.get("#password").type("amal123123@#{enter}");
+})
+
+//Cypress.Commands.add("findItemBy")
